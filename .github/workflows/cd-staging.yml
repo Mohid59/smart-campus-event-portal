@@ -7,6 +7,12 @@ on:
       - release/**      # any release branch triggers QA
     types:
       - completed
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev
+      - feature/**
 
 jobs:
   deploy:
