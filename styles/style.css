@@ -1,8 +1,37 @@
-body {
-  background-color: #f8f9fa;
-  font-family: Arial, sans-serif;
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* BODY */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(90deg, #003366, #0055aa) !important;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-link {
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #00d4ff !important;
+}
+
+/* HERO SECTION */
 .hero {
   height: 90vh;
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
@@ -11,20 +40,112 @@ body {
   background-position: center;
 }
 
+.hero h1 {
+  font-size: 55px;
+}
+
+.hero p {
+  font-size: 20px;
+}
+
+/* HEADINGS */
+h2 {
+  font-weight: 700;
+  color: #003366;
+}
+
+/* CARDS */
 .card {
-  transition: 0.3s;
   border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-footer {
-  margin-top: 40px;
-}
-
-h2 {
-  font-weight: bold;
+.card h5 {
   color: #003366;
+  font-weight: 600;
+}
+
+/* BUTTONS */
+.btn-primary {
+  background-color: #0055aa;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #003f7f;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-info {
+  background-color: #00bcd4;
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: #0097a7;
+}
+
+/* FORM */
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-control {
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.form-control:focus {
+  border-color: #0055aa;
+  box-shadow: 0 0 5px rgba(0,85,170,0.5);
+}
+
+/* ALERTS */
+.alert {
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* FOOTER */
+footer {
+  background-color: #003366;
+  color: white;
+  font-size: 14px;
+}
+
+/* SPACING IMPROVEMENTS */
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
 }
