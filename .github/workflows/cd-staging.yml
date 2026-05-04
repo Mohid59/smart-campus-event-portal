@@ -7,12 +7,13 @@ on:
       - release/**      # any release branch triggers QA
     types:
       - completed
+  workflow_dispatch:  # Allow manual triggering
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    environment: staging
+    # environment: staging  # Temporarily removed for testing
 
     steps:
       - name: Deploy to Render QA
