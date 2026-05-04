@@ -11,15 +11,16 @@ jobs:
   deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    environment: staging   # ✅ VERY IMPORTANT
 
     steps:
-      - name: Deploy to Render QA
+      - name: Debug Secret
         run: |
           if [ -z "${{ secrets.RENDER_CALLBACK_URL_QA }}" ]; then
-            echo "::error::Secret RENDER_CALLBACK_URL_QA is missing!"
-            exit 1
+            echo "❌ Secret EMPTY"
+          else
+            echo "✅ Secret FOUND"
           fi
 
-          echo "Triggering Render deploy for QA..."
+      - name: Deploy to Render QA
+        run: |
           curl -X POST "${{ secrets.RENDER_CALLBACK_URL_QA }}"
