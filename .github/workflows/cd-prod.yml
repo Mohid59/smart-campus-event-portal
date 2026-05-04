@@ -2,11 +2,17 @@ name: CD Pipeline - Production
 
 on:
   workflow_run:
-    workflows: ["CI Pipeline - Production"]  # must match CI workflow name
+    workflows: ["CI Pipeline - Production"]  # must matches CI workflow name
     branches:
       - production
     types:
       - completed
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev
+      - feature/**
 
 jobs:
   deploy:
