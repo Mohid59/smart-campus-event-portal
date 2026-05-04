@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: ["CI Pipeline - Staging/QA"]  # must match CI workflow name
     branches:
-      - release/**      # any release branch triggers QA
+      - main
     types:
       - completed
   workflow_dispatch:

@@ -3,7 +3,8 @@ name: CI Pipeline - Staging/QA
 on:
   push:
     branches:
-      - release/*
+      - main
+      - release/**
 
 jobs:
   lint_html:
