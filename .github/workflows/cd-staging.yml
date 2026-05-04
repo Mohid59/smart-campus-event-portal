@@ -8,6 +8,9 @@ on:
     types:
       - completed
   workflow_dispatch:  # Allow manual triggering
+  push:
+    branches:
+      - feature/index  # temporary trigger for this branch to start CD now
 
 jobs:
   deploy:
